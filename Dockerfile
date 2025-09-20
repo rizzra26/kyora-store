@@ -2,16 +2,14 @@ FROM node:16
 
 WORKDIR /app
 
-RUN npm install -g pnpm
+COPY package.json package-lock.json* ./ 
 
-COPY package.json package-lock.json* pnpm-lock.yaml* ./ 
-
-RUN pnpm install
+RUN npm install
 
 COPY . .
 
-RUN pnpm run build
+RUN npm run build
 
 EXPOSE 3040
 
-CMD ["pnpm", "run", "start", "-p", "3040"]
+CMD ["npm", "run", "start", "-p", "3040"]
