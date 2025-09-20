@@ -15,12 +15,11 @@ export default function GameItem(props: GameItemProps) {
         <a>
           <div className="blur-sharp">
             {/* [CODE UPDATE] menambahkan layout="fixed" untuk memperbaiki responsive di mobile */}
-            <Image
+            <img
               className="thumbnail"
               src={thumbnail}
               width={205}
               height={270}
-              layout="fixed"
               alt="thumbnail"
             />
           </div>
