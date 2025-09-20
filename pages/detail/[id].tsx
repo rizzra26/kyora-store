@@ -73,9 +73,9 @@ export async function getStaticProps({ params }: GetStaticProps) {
   const data = await getDetailVoucher(id);
   return {
     props: {
-      dataItem: data?.detail,
-      nominals: data?.detail?.nominals,
-      payments: data?.payment,
+      dataItem: data?.detail ?? null,
+      nominals: data?.detail?.nominals ?? [],
+      payments: data?.payment ?? [],
     },
   };
 }
